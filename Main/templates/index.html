@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <h1 style="font-size: 48px; margin-bottom: 50px;">Programming Language Recommender</h1>
+    
+    <h2>"What Programming Language Should I Learn?"</h2><br>
+    <p style="width: 80%; text-align: center; margin: auto;">Use this <b>Programming Langauge Recommender</b> to find out learning what first is the best for you!</p><br>
+   
+    <a href="{% url 'survey' %}"><button class="btn-wide">I Want To Find</button></a>
+
+{% endblock %}

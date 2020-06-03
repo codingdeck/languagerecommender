@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {% if question %}
+        <h1 id="heading">{{ question.title }} <i class="fas fa-pencil-alt"></i></h1>
+        <!-- <hr> -->
+        <p>{{ question.description }}</p>
+        <div class="options row">
+            {% for option in options %}
+            <label class="col-large-6" style="margin: auto;">
+                <input type="radio"  name="answer" value="{{ option.id }}"/>
+                <span>{{ option }}</span>
+            </label>
+            {% endfor %}
+        
+        <br><br>
+        </div>
+        <div class="form-group text-center" >
+            <button class="btn btn-lg">NEXT</button>
+        </div>
+                
+            
+        {% else %}
+        <br>
+        <h1 id="heading" style="color: white;">You Should Learn....</h1>
+        <h1 id="heading">{{ language }}</h1>
+        <br>
+        <p style="margin: 0 10%;">{{ language.description }}</p>
+        
+        {% endif %}
+        
+        </form>
+    </div>
+{% endblock %}
