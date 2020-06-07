@@ -11,7 +11,7 @@
         <div class="options row">
             {% for option in options %}
             <label class="col-large-6" style="margin: auto;">
-                <input type="radio"  name="answer" value="{{ option.id }}"/>
+                <input type="radio"  name="answer" value="{{ option.id }}" required/>
                 <span>{{ option }}</span>
             </label>
             {% endfor %}
